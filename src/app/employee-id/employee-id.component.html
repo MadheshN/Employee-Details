@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-body">
+    <div class="table-responsive">
+
+      <table class="table table-striped">
+        <thead>
+          <tr [style.background-color]="'yellow'">
+
+            <th [style.background-color]="'yellow'">EMP Id</th>
+            <th [style.background-color]="'yellow'">EMP Name</th>
+            <th [style.background-color]="'yellow'">Designation</th>
+            <th [style.background-color]="'yellow'">Date</th>
+            <th [style.background-color]="'yellow'">Address</th>
+            <th [class.emp-salary-hidden]="hideSalary" *ngIf="!hideSalary">Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td [style.background-color]="'rgb(4, 253, 25)'">{{employee.id}}</td>
+            <td [style.background-color]="'rgb(4, 253, 25)'">{{employee.name}}</td>
+            <td [style.background-color]="'rgb(4, 253, 25)'">{{employee.designation}}</td>
+            <td [style.background-color]="'rgb(4, 253, 25)'"> {{employee.date}}</td>
+            <td [style.background-color]="'rgb(4, 253, 25)'">{{employee.address}}</td>
+            <td *ngIf="!hideSalary" [style.background-color]="'rgb(4, 253, 25)'">{{employee.salary}}</td>
+          </tr>
+        </tbody >
+      </table>
+    </div>
+    <button (click)="toggleSalaryVisibility()">Hide</button>
+  </div>
+</div>
